@@ -1,0 +1,40 @@
+# read in screenrc
+
+# I don't need this apparently, as it loads automatically, don't know why I should used htis ever
+#source $HOME/.screenrc
+# using aliases http://superuser.com/questions/218015/linux-aliases-when-using-screen
+
+startup_message off
+#now start opening windows
+# open up initial screen to the top command
+
+# screen -t thetop top
+chdir '/home/vagrant/dev/python/p3catchall'
+screen -t p3catchall 
+chdir '/home/vagrant/dev/node'
+screen -t node 
+chdir '/home/vagrant/dev/python'
+screen -t python 
+chdir '/home/vagrant/'
+screen -t miscbash 
+# screen -t worker workon p3catchall
+# chdir dev/node
+# screen -t node 
+# screen -t basescreen bash
+# chdir ../..
+# screen -t basescreen bash
+defscrollback 5000
+vbell off
+autodetach on
+# randoms hit that is supposed to fix scrollback in putty
+termcapinfo xterm ti@:te@
+#binds
+# e, E, i, t, m, n, v, V - these are safe keys to bind
+bind e screen -t vim vim -S /root/dev/python/crawly/Session.vim
+bind E screen -t vim vim -S /root/dev/python/game/pro/Session.vim
+bind w screen -t bash bash
+bind } history
+bind v windowlist -b
+# i don't know how this is supposed to work, currently it just opens another bash...
+# bind , source "$HOME/.screenrc"
+# screen -c otherconfig - launch screen with a specific .rc file, if I want to open a different set of windows

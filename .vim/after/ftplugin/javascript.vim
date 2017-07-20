@@ -1,0 +1,6 @@
+" set whitespace for javascript to always use 4 spaces instead of tabs
+" setlocal expandtab
+setlocal tabstop=8
+setlocal shiftwidth=2
+" setlocal shiftround
+setlocal softtabstop=2
